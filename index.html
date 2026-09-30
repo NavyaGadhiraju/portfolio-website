@@ -1,390 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navya Gadhiraju | Biomedical Engineering Portfolio & CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #131c2e;
-            --card-border: #1e293b;
-            --accent-cyan: #06b6d4;
-            --accent-blue: #3b82f6;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif.serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.7;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.05));
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-blue));
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .tagline {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-cyan);
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 20px;
-        }
-
-        .contact-info a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-cyan);
-        }
-
-        nav {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            padding: 8px 16px;
-            border-radius: 8px;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            background: var(--accent-cyan);
-            color: #0b0f19;
-            border-color: var(--accent-cyan);
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 1.75rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 12px;
-        }
-
-        h2 span {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-cyan);
-            font-size: 1.2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            padding: 25px;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .card .meta {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--accent-cyan);
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .skills-tag-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
-        }
-
-        .tag {
-            background: rgba(6, 182, 212, 0.1);
-            color: var(--accent-cyan);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid rgba(6, 182, 212, 0.2);
-        }
-
-        .about-text {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            padding: 30px;
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            header { padding: 30px 20px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navya Gadhiraju | Biomedical & Mechanical Engineering Portfolio</title>
+<meta name="description" content="Biomedical engineering student at UVic: prosthetics, medical device design, clinical research and data analysis.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e18;--card:#111a2b;--line:#1f2b41;--cy:#22c5e0;--bl:#3b82f6;--tx:#f1f5f9;--mu:#9aa9bf}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px}
+a{color:var(--cy)}
+header{border:1px solid var(--line);border-radius:20px;padding:44px 38px;margin:20px 0 30px;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(34,197,224,.09),rgba(59,130,246,.03))}
+header:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--cy),var(--bl))}
+h1{font-size:clamp(2.2rem,6vw,3.2rem);letter-spacing:-.02em;line-height:1.1}
+.tag1{font:500 .95rem 'JetBrains Mono',monospace;color:var(--cy);margin:10px 0 14px}
+.lead{color:#c5d0e0;max-width:740px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{padding:9px 16px;border-radius:9px;border:1px solid var(--line);color:var(--tx);text-decoration:none;font-size:.88rem;font-weight:500;transition:.25s;background:rgba(255,255,255,.03)}
+.btn:hover,.btn.p{background:var(--cy);color:#06101a;border-color:var(--cy)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:40px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.stat b{display:block;font-size:1.7rem;color:var(--cy)}
+.stat span{font-size:.8rem;color:var(--mu)}
+h2{font-size:1.6rem;margin:46px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+h2 small{font:500 .95rem 'JetBrains Mono',monospace;color:var(--cy);margin-right:8px}
+h4{font:500 .75rem 'JetBrains Mono',monospace;color:var(--cy);text-transform:uppercase;margin:20px 0 8px;letter-spacing:.05em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:20px;transition:.25s}
+.card:hover{border-color:var(--cy);box-shadow:0 12px 30px -12px rgba(34,197,224,.2)}
+.hd{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.logo{height:46px;width:auto;max-width:130px;object-fit:contain;background:#fff;border-radius:8px;padding:5px}
+.card h3{font-size:1.25rem;line-height:1.3}
+.meta{font:.78rem 'JetBrains Mono',monospace;color:var(--cy);margin-top:3px}
+.sum{color:#c5d0e0;margin-bottom:10px}
+ul{padding-left:20px;color:#c5d0e0;font-size:.94rem}
+li{margin-bottom:4px}
+dl{display:grid;grid-template-columns:105px 1fr;gap:10px 16px;font-size:.94rem;margin-top:8px}
+dt{font:500 .75rem 'JetBrains Mono',monospace;color:var(--cy);text-transform:uppercase;padding-top:4px}
+dd{color:#c5d0e0}
+details.sub{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:rgba(255,255,255,.02)}
+details.sub summary{cursor:pointer;padding:12px 16px;list-style:none;display:flex;flex-direction:column;gap:2px}
+details.sub summary::-webkit-details-marker{display:none}
+details.sub summary b:before{content:"+ ";color:var(--cy)}
+details[open].sub summary b:before{content:"− "}
+details.sub summary span{font-size:.86rem;color:var(--mu)}
+details.sub>dl,details.sub>.gallery{margin:0 16px 16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tags span,.chip{font:.72rem 'JetBrains Mono',monospace;color:var(--cy);background:rgba(34,197,224,.08);border:1px solid rgba(34,197,224,.2);border-radius:6px;padding:3px 9px;text-decoration:none}
+.chip:hover{background:var(--cy);color:#06101a}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:16px}
+.gallery figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#070a12;cursor:zoom-in}
+.gallery img{width:100%;height:150px;object-fit:cover;display:block;transition:transform .35s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{font-size:.74rem;color:var(--mu);padding:7px 10px}
+.sk{display:grid;grid-template-columns:230px 1fr;gap:6px 18px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.sk b{color:#fff}.sk span{color:var(--mu);font-size:.82rem;display:block;font-weight:400}
+.ev{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.filters button{font:500 .8rem 'JetBrains Mono',monospace;background:none;color:var(--mu);border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;transition:.2s}.filters button.on,.filters button:hover{color:#06101a;background:var(--cy);border-color:var(--cy)}
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.cert{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--cy);border-radius:10px;padding:13px 15px}.cert b{display:block;font-size:.92rem}.cert b:before{content:"✓ ";color:var(--cy)}.cert span{font-size:.78rem;color:var(--mu)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid2 .card{margin:0}
+#lb{position:fixed;inset:0;background:rgba(5,8,14,.94);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:99;padding:20px}
+#lb.open{display:flex}
+#lb img{max-width:94%;max-height:78vh;border-radius:10px;border:1px solid var(--cy);background:#fff}
+#lb p{color:var(--mu);margin-top:14px;max-width:700px;text-align:center;font-size:.92rem}
+#lb button{position:absolute;background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--line);border-radius:50%;width:44px;height:44px;font-size:1.3rem;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .pv{left:14px;top:50%}#lb .nx{right:14px;top:50%}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid var(--line);color:var(--mu);font-size:.85rem;text-align:center}
+@media(max-width:700px){header{padding:28px 20px}dl,.sk{grid-template-columns:1fr}dt{padding:0}}
+</style>
 </head>
 <body>
+<div class="wrap">
 
-    <div class="container">
-        <header>
-            <h1>Navya Gadhiraju</h1>
-            <div class="tagline">&gt; Biomedical Engineering Undergraduate | Mechanical Design & Clinical Systems</div>
-            <p>University of Victoria (BEng, 2024–2029) | Specializing in mechanical engineering, precision oncology workflows, medical prototyping, and sustainable design systems.</p>
-            
-            <div class="contact-info">
-                <span>📍 Vancouver, BC / Victoria, BC</span>
-                <span>📞 604-789-1216</span>
-                <a href="mailto:navya.gadhiraju@outlook.com">✉️ navya.gadhiraju@outlook.com</a>
-                <a href="https://www.linkedin.com/in/navya-gadhiraju" target="_blank">🔗 LinkedIn Profile</a>
-            </div>
+<header>
+  <h1>Navya Gadhiraju</h1>
+  <div class="tag1">Biomedical Engineering, Mechanical Stream · University of Victoria · Victoria &amp; Vancouver, BC</div>
+  <p class="lead">I believe great healthcare depends on great engineering, and that is the space I want to work in. I’m a Biomedical Engineering student (mechanical stream) at UVic who loves turning clinical problems into things people can actually use: prosthetic hands for clinics in 11 countries, an MRI simulator designed to help kids get scanned without sedation, and data analysis that helps a cancer lab handle patient samples better. Medical technology only works when the engineering and the clinical need meet, and I like being the person who understands both!</p>
+  <div class="links">
+    <a class="btn p" href="Navya_Gadhiraju_Resume.pdf" download>Download Resume</a>
+    <a class="btn p" href="Navya_Gadhiraju_Project_Portfolio.pdf" download>Download Project Portfolio</a>
+    <a class="btn" href="mailto:navya.gadhiraju@outlook.com">navya.gadhiraju@outlook.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/navya-gadhiraju" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</header>
 
-            <nav>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Engineering Projects</a>
-                <a href="#skills">Technical Skills</a>
-            </nav>
-        </header>
+<div class="stats">
+  <div class="stat"><b>~9,000</b><span>biobank samples analyzed</span></div>
+  <div class="stat"><b>40+</b><span>prosthetic hands built &amp; QA-tested</span></div>
+  <div class="stat"><b>3</b><span>hospital &amp; industry design partners</span></div>
+  <div class="stat"><b>1</b><span>lab protocol under peer review</span></div>
+</div>
 
-        <section id="about">
-            <h2><span>01.</span> About Me</h2>
-            <div class="about-text">
-                <p>Hello! I am a third-year Biomedical Engineering student at the University of Victoria specializing in mechanical engineering. Driven by a passion for healthcare innovation and sustainable design, I bridge high-dimensional bioinformatics, hands-on medical hardware prototyping, and clinical sample processing.</p>
-                <p style="margin-top: 15px;">Whether analyzing provincial biobank metadata in R at BC Cancer, assembling 3D-printed prosthetics for international deployment at the Victoria Hand Project, or engineering clinical prototypes like the pediatric MRI simulator, I thrive at the intersection of mechanical design and life-saving medical technology.</p>
-            </div>
-        </section>
+<h2><small>01.</small>Work Experience</h2><div id="work"></div>
+<h2><small>02.</small>Engineering Projects</h2><div class="filters" id="filters"><button class="on" data-f="all">All</button><button data-f="dev">Medical devices</button><button data-f="mech">Mechanical design</button><button data-f="elec">Electronics &amp; data</button><button data-f="sus">Sustainable design</button></div><div id="proj"></div>
+<h2><small>03.</small>Skills</h2><div class="card" id="skills"></div>
+<h2><small>04.</small>Certifications</h2><div class="certs" id="certs"></div>
+<h2><small>05.</small>Beyond the Lab</h2><div class="grid2" id="beyond"></div>
 
-        <section id="experience">
-            <h2><span>02.</span> Professional Experience</h2>
-            <div class="grid">
-                <div class="card">
-                    <div>
-                        <h3>Research Experience Intern</h3>
-                        <div class="meta">BC Cancer (Deeley Research Centre - Fonseca Lab) | May 2026 - Aug 2026</div>
-                        <p>Analyzed provincial metadata across ~9,000 biobanked samples in R, identifying a 3-day median processing gap that initiated blood tube stability trials. Processed clinical blood samples for the VHL Biobank in a biosafety cabinet via two-stage centrifugation to separate cfDNA plasma and buffy coat fractions. Developed a visual bench protocol for QIAGEN RNeasy FFPE total RNA extraction.</p>
-                    </div>
-                    <div class="skills-tag-group">
-                        <span class="tag">R Studio</span>
-                        <span class="tag">Bioinformatics</span>
-                        <span class="tag">Clinical Biosafety</span>
-                        <span class="tag">Liquid Biopsy</span>
-                    </div>
-                </div>
+<footer>
+  <p><a href="mailto:navya.gadhiraju@outlook.com">navya.gadhiraju@outlook.com</a> · <a href="https://www.linkedin.com/in/navya-gadhiraju" target="_blank" rel="noopener">LinkedIn</a></p>
+  <p style="margin-top:8px">© 2026 Navya Gadhiraju</p>
+</footer>
+</div>
 
-                <div class="card">
-                    <div>
-                        <h3>Biomedical Systems Engineering Intern</h3>
-                        <div class="meta">Victoria Hand Project | Jan 2026 - Apr 2026</div>
-                        <p>Assembled, cabled, and quality-tested 40+ 3D-printed prosthetic hands (VC300, VO300, VS300) for global clinic deployment. Led and trained 50+ volunteers, conducted tensile testing on TPU print orientations, and updated CAD models in Autodesk Fusion 360.</p>
-                    </div>
-                    <div class="skills-tag-group">
-                        <span class="tag">Autodesk Fusion 360</span>
-                        <span class="tag">3D Printing</span>
-                        <span class="tag">Tensile Testing</span>
-                        <span class="tag">Prosthetics</span>
-                    </div>
-                </div>
+<div id="lb" role="dialog" aria-modal="true">
+  <button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button>
+  <img id="lbi" alt=""><p id="lbc"></p>
+</div>
 
-                <div class="card">
-                    <div>
-                        <h3>Research Assistant</h3>
-                        <div class="meta">Willerth Lab (UVic) | Jan 2026 - Apr 2026</div>
-                        <p>Co-authored a standardized laboratory protocol for 3D bioprinted neural tissue models for Parkinson's disease, documenting patient-derived hiPSC culture, bioink formulation, and Aspect Biosystems RX1 bioprinting procedures for peer-reviewed publication.</p>
-                    </div>
-                    <div class="skills-tag-group">
-                        <span class="tag">Tissue Engineering</span>
-                        <span class="tag">hiPSC Culture</span>
-                        <span class="tag">3D Bioprinting</span>
-                        <span class="tag">SOP Authoring</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<script>
+/* =====================================================================
+   EDIT YOUR CONTENT HERE. Everything on the page comes from this block.
+   Pictures: put the file in the images/ folder, then add a line like
+   ["my-photo.jpg", "Caption shown under the picture"] to that item's imgs list.
+   Missing images are hidden automatically.
+   ===================================================================== */
+const WORK = [
+{id:"bcc", logo:"logo-bccancer.png", role:"Research Experience Intern", org:"BC Cancer · Deeley Research Centre (Fonseca Lab)", dates:"May – Aug 2026",
+ sum:"Precision oncology research that combined biobank data analysis with hands-on clinical blood processing.",
+ bullets:["Analyzed ~9,000 biobank sample records (2017–2026) to measure how long blood waits before processing across BC.","Built R scripts to compare cfDNA levels across 2,641 unique patients and track 51 kidney-cancer (RCC) patients over time.","Processed blood for the VHL Biobank in a Class II biosafety cabinet, following SOP-001.","Wrote a visual RNA-extraction protocol that the lab adopted into its standard workflow.","Sourced, inventoried and stored reagents from Science Stores for spatial imaging assays.","Completed biosafety, hazardous drugs, chemical safety and TCPS 2 training before handling patient samples."],
+ subs:[
+ {id:"bcc-turnaround", t:"Turnaround-time analysis", h:"Found a 3-day median delay across ~9,000 samples",
+  problem:"Delays between blood collection and processing can degrade cfDNA and protein biomarkers, but the delay hadn’t been measured across the province’s hospital and LifeLabs sites.",
+  did:["Sorted BC Genitourinary Cancer Biobank records into prostate and kidney sheets.","Calculated days from collection to receipt, receipt to processing, and collection to processing.","Split results into 2016–2019, 2020–2023 and 2024–2026.","Charted medians as a grouped bar chart, not a stacked one, because the total isn’t the sum of the parts."],
+  result:"Confirmed a 3-day provincial median. The lab is now testing whether proteomic profiles stay stable at that delay across different blood collection tubes.",
+  imgs:[["bcc-turnaround-plots.png","Collection, receipt and processing times: kidney and prostate"]]},
+ {id:"bcc-cfdna", t:"cfDNA &amp; serial-sample analysis", h:"Compared 2,641 patients and tracked 51 RCC patients over time",
+  problem:"The lab wanted to know how cfDNA levels differ by cancer type and how they change during a patient’s disease.",
+  did:["Wrote an R pipeline to split diagnoses into cohorts, clean headers with regular expressions, drop incomplete records and remove duplicate patients.","Plotted cfDNA by cancer type.","Kept repeat visits for RCC patients (43 with 2 visits, 5 with 3, 2 with 4, 1 with 5) and plotted their change over time."],
+  result:"Median cfDNA was 1.14 ng/µL in RCC and 1.23 ng/µL in prostate, with a clear serial-sample view of the 51 returning RCC patients.",
+  imgs:[["bcc-cfdna-plots.png","cfDNA by cancer type; serial samples for 51 RCC patients"]]},
+ {id:"bcc-blood", t:"Blood processing (VHL Biobank)", h:"Two-stage centrifugation to isolate cfDNA plasma and buffy coat",
+  problem:"Patient samples are irreplaceable, so handling has to be precise and repeatable.",
+  did:["Validated my pipetting on an analytical balance over 10 replicates (7 mL: 7.036 g, SD 0.053; 460 µL: 0.456 g, SD 0.005).","Assisted in a Class II biosafety cabinet: 1600 × g for 15 min to separate plasma, buffy coat and red cells, then 3800 × g for 10 min to clear the plasma."],
+  result:"Cleared cfDNA plasma and separate gDNA-containing buffy coat, ready for liquid-biopsy work.",
+  imgs:[["bcc-blood-layers.png","Blood components after centrifugation"]]},
+ {id:"bcc-rneasy", t:"RNeasy FFPE protocol", h:"Visual bench guide now used in the lab's workflow",
+  problem:"RNA extraction from FFPE tumour tissue has many steps that are easy to get wrong for someone new.",
+  did:["Built a step-by-step slide deck covering deparaffinization, Proteinase K digestion, heat treatment, DNase, and column purification.","Designed a 5-tube labeling scheme (TISSUE, CLEAR, SUPERNATANT, FINAL RNA, BACKUP) for a 2.5-hour workflow."],
+  result:"Adopted into the lab's standard workflow to guide future extractions.",
+  imgs:[["bcc-rneasy-protocol.png","RNeasy FFPE tube labeling scheme"]]}]},
 
-        <section id="projects">
-            <h2><span>03.</span> Featured Engineering Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Pediatric MRI Simulator ("Discovery Dome")</h3>
-                    <div class="meta">WEST x Fraser Health / Surrey Memorial Hospital | Sept 2025 – Spring 2026</div>
-                    <p>Co-developed a child-friendly structural MRI simulator to familiarize pediatric patients with scan environments and reduce clinical sedation rates. Designed compact vertical-fold GRP composite domes, rolling V-slot extrusion bed tracks, and sanitation-compliant medical vinyl padding within strict 200 lb weight capacities.</p>
-                    <div class="skills-tag-group">
-                        <span class="tag">CAD Design</span>
-                        <span class="tag">Composite Materials</span>
-                        <span class="tag">Healthcare Ergonomics</span>
-                    </div>
-                </div>
+{id:"vhp", logo:"logo-vhp.png", role:"Biomedical Systems Engineering Co-op", org:"Victoria Hand Project", dates:"Jan – Apr 2026",
+ sum:"Hands-on engineering for a non-profit that ships low-cost 3D-printed prosthetic hands to clinics worldwide.",
+ bullets:["Assembled, cabled and QA-tested 40+ prosthetic hands (VC300, VO300, VS300) for clinics in 11+ countries.","Trained 50+ volunteers on assembly.","Designed assistive devices that work with VHP's prosthetic hands (see the Mouse-Clicker project below).","Used 3D printing, 3D scanning and Fusion 360 to iterate on components.","Repaired and maintained Prusa and Ultimaker printers, and managed print workflows and component inventory.","Validated VHP workflow software releases against patient scan data, converting between 3MF, bgcode and G-code.","Wrote the onboarding guide for incoming co-ops and prepared outreach shipments."],
+ subs:[
+ {id:"vhp-manual", t:"Assembly manual &amp; tolerance fixes", h:"Corrected a thumb-motion error and standardized pin lengths",
+  problem:"Recurring assembly problems were slowing production across hand models.",
+  did:["Found that the manual showed the thumb piston inverted, which severely restricted motion. Corrected the CAD and manual and retrofitted affected hands.","Secured loose 6 mm pin holes on laser-cut VC300 parts, then logged tight vs. loose fits for new batches.","Standardized a 28 mm pin after a VO300 palm redesign made old pin lengths obsolete."],
+  result:"Full thumb articulation restored and fit data documented for future batches.",
+  imgs:[["vhp-manual-fix.png","Thumb piston: original vs. corrected manual"]]},
+ {id:"vhp-molds", t:"Silicone mold materials", h:"Chose polypropylene over PLA and TPU for fingertip molds",
+  problem:"Rigid PLA molds made pin insertion and cured-part removal difficult.",
+  did:["Printed molds in TPU and polypropylene and compared them in iterative casting trials."],
+  result:"Polypropylene released parts easily with minimal Vaseline and avoided TPU's excess flexibility.",
+  imgs:[["vhp-molds.jpg","Silicone fingertip molds"],["vhp-molds-2.jpg","Mold comparison"]]},
+ {id:"vhp-tensile", t:"TPU tensile testing", h:"Compared print orientations across 12 specimens",
+  problem:"Flexible components needed a material and print-orientation decision backed by data.",
+  did:["Tensile-tested 12 TPU coupons (6 horizontal, 6 vertical), recording force–displacement data to evaluate yield strength and Young's modulus.","Reprinted and re-tested two samples after a data-loss incident."],
+  result:"Data on how print orientation affects strength, used to guide material selection.",
+  imgs:[["vhp-tensile.png","Tensile testing setup and results"]]},
+ {id:"vhp-clicker", t:"Assistive mouse-clicker device", h:"Turned a non-working student design into a print-ready, snap-fit assistive device",
+  problem:"A student-designed adapter meant to help prosthetic-hand users click a mouse did not work: its screw holes never cut and the parts did not snap together.",
+  did:["Found the cause in Fusion 360: overlapping sketches and duplicate extrusions, with only one of four sketch layers extruded.","Cleaned up the sketches, resized the screw holes to fit standard hardware, and reshaped the slot and top bump for a secure snap-fit.","Previewed the parts in the slicer to confirm they print cleanly."],
+  result:"A working, print-ready assistive device. Full write-up in Engineering Projects below.",
+  imgs:[["vhp-mouse-clicker.png","Mouse-clicker adapter: CAD and slicer view"]]},
+ {id:"vhp-petg", t:"PETG palm evaluation", h:"Tested a tougher material for palms that snap at high-stress joints",
+  problem:"Standard PLA palms tended to snap at high-stress joint boundaries.",
+  did:["Rebuilt a damaged demo hand by replacing its broken internal wrist components.","Evaluated PETG as a more fracture-resistant alternative to PLA for the palm."],
+  result:"PETG identified as a fracture-resistant option for the parts that break most.",
+  imgs:[["vhp-petg-palm.jpg","PETG palm and rebuilt demo hand"]]}]},
 
-                <div class="card">
-                    <h3>FortisBC Biogas Plant Upgrade</h3>
-                    <div class="meta">WEST x FortisBC | Jan 2025 – Apr 2025</div>
-                    <p>Conducted thermodynamic mass flow, power, and single-stage heat calculations to address capacity expansion from 500 to 800 scmh at the Kelowna Biogas Plant. Recommended the Atlas Copco GG Variable Speed Drive Compressor with anti-surge loops and SmartLink monitoring.</p>
-                    <div class="skills-tag-group">
-                        <span class="tag">Industrial Thermodynamics</span>
-                        <span class="tag">Process Systems Sizing</span>
-                        <span class="tag">VSD Compressors</span>
-                    </div>
-                </div>
+{id:"willerth", logo:"logo-willerth.png", role:"Research Assistant", org:"Willerth Lab · University of Victoria", dates:"Jan – Apr 2026",
+ sum:"Turned a published 3D-bioprinting study into a reproducible lab protocol.",
+ bullets:["Co-authored a standardized protocol for 3D-bioprinted neural tissue models of Parkinson's disease, adapted from a scientific manuscript into Current Protocols format.","Documented the full workflow: patient-derived hiPSC culture, bioink formulation, Aspect Biosystems RX1 bioprinting and immunochemistry.","Worked with researchers to refine parameters and remove ambiguities so others can reproduce the results.","The protocol is currently under peer review for publication."],
+ imgs:[["willerth-graphical-abstract.png","Bioprinted neural tissue workflow"]]}
+];
 
-                <div class="card">
-                    <h3>MedaSort Smart Medication System</h3>
-                    <div class="meta">UVic Design & Communications Lab | Jan 2025 – Apr 2025</div>
-                    <p>Designed and soldered a low-cost hardware-software tracking device using a Raspberry Pi Pico and Python. Integrated analog thermistors and phototransistors with local LED fail-safe loops and a real-time web dashboard to monitor cabinet access and temperature excursions.</p>
-                    <div class="skills-tag-group">
-                        <span class="tag">Raspberry Pi Pico</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Circuit Analysis</span>
-                        <span class="tag">Web Dashboard</span>
-                    </div>
-                </div>
+const PROJ = [
+{id:"mri", c:"dev mech", logo:"logo-fraser-west.png", t:"Pediatric MRI Simulator (“Discovery Dome”)", meta:"UVic WEST × Fraser Health / Surrey Memorial Hospital · Sept 2025 – Spring 2026",
+ problem:"Children are often sedated for MRI because the scanner is loud and confining, which adds recovery time and strains staff.",
+ cons:"Under 6.5 ft assembled · 60–70 cm tunnel · at least 200 lb load · $10,000 CAD · one-person setup in under 5 minutes, with no injury risk.",
+ did:["Team design: a folding dome made of two glass-fibre halves that sits on a storage box, sized to hospital limits.","My focus was the sliding bed: helped replace the original two-rail design, which risked misaligned rails and jams, with one continuous frame on V-slot track.","Selected soft-close folding brackets rated over 200 lb to support the bed leg safely."],
+ result:"Built and tested in spring 2026 using hospital-grade materials.",
+ tags:["Fusion 360","Mechanism design","Medical device design","Teamwork"],
+ imgs:[["mri-concept-sketch.png","Concept sketches: dome halves and fold"],["mri-cad-render.png","CAD render: dome, box and sliding bed"],["mri-wheel-track.png","Roller wheel on V-slot bed track"],["mri-built-1.jpg","Built prototype"]]},
 
-                <div class="card">
-                    <h3>Introba Passive Building Prototype</h3>
-                    <div class="meta">WEST x Introba Canada | Sept 2024 – Dec 2024</div>
-                    <p>Designed and built a climate-responsive passive building prototype meeting strict 0.22 m³ volume constraints and a $250 budget. Utilized Cradle-to-Cradle mechanical fastening, precast concrete thermal mass, and triple-pane glazing, successfully maintaining thermal retention on a Victoria rooftop during torrential November downpours.</p>
-                    <div class="skills-tag-group">
-                        <span class="tag">Passive Architecture</span>
-                        <span class="tag">Cradle-to-Cradle Design</span>
-                        <span class="tag">Thermal Modeling</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+{id:"clicker", c:"dev mech", logo:"logo-vhp.png", t:"Assistive Mouse-Clicker Device", meta:"Victoria Hand Project · Assistive medical device · Jan – Apr 2026",
+ problem:"A student-designed mouse-clicker adapter, meant to help prosthetic-hand users operate desktop and laptop computers, didn't work: the screw holes never cut and the snap-fit didn't hold.",
+ did:["Traced the fault to overlapping sketch profiles and redundant extrusions, with only one of four sketch layers extruded.","Rebuilt the sketch hierarchy in Fusion 360 so every feature cut correctly.","Resized fastener holes to fit standard hardware.","Reshaped the slot and top-bump geometry into a secure snap-fit, and checked the parts in the slicer for printing."],
+ result:"Turned a non-functional prototype into a production-ready, 3D-printable assistive device.",
+ tags:["Fusion 360","Design for 3D printing","Design for assembly","Assistive technology"],
+ imgs:[["vhp-mouse-clicker.png","Mouse-clicker adapter: CAD and slicer view"],["clicker-printed.jpg","Printed device"]]},
 
-        <section id="skills">
-            <h2><span>04.</span> Technical Competencies</h2>
-            <div class="card">
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <div>
-                        <strong style="color: var(--accent-cyan); display: block; margin-bottom: 8px;">CAD & Design:</strong>
-                        <div class="skills-tag-group">
-                            <span class="tag">SolidWorks</span>
-                            <span class="tag">Autodesk Fusion 360</span>
-                            <span class="tag">Rapid Prototyping</span>
-                            <span class="tag">Mechanical Systems</span>
-                        </div>
-                    </div>
-                    <div>
-                        <strong style="color: var(--accent-cyan); display: block; margin-bottom: 8px;">Programming & Bioinformatics:</strong>
-                        <div class="skills-tag-group">
-                            <span class="tag">R Studio</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">C</span>
-                            <span class="tag">Data Cleaning & Regex</span>
-                        </div>
-                    </div>
-                    <div>
-                        <strong style="color: var(--accent-cyan); display: block; margin-bottom: 8px;">Wet Lab & Clinical Techniques:</strong>
-                        <div class="skills-tag-group">
-                            <span class="tag">Biosafety Cabinet Operations</span>
-                            <span class="tag">Blood Fractionation & Centrifugation</span>
-                            <span class="tag">RNA Extraction (QIAGEN RNeasy)</span>
-                            <span class="tag">Pipetting Validation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+{id:"fortis", c:"mech sus", logo:"logo-fortis-west.png", t:"Biogas Compressor Upgrade, Kelowna Biogas Plant", meta:"UVic WEST × FortisBC · Jan – Apr 2025",
+ problem:"The plant was near its 500 scmh limit and needed to reach 800 scmh. Intermittent flow from the gas-purification cycles risked compressor surge and over-pressurized tanks.",
+ did:["Ran mass-flow and power calculations from plant data: 421 m³/h peak, 896 kPa outlet, roughly 93 kW ideal and 109 HP shaft power at 85% efficiency.","Showed why compression heat calls for interstage cooling.","Compared a compressor oversized by 400% against a variable-speed-drive (VSD) screw compressor."],
+ result:"Recommended the Atlas Copco GG VSD with an anti-surge recycle loop, interstage cooling and SmartLink monitoring, because it tracks fluctuating flow without start/stop wear or throttling losses. Presented to FortisBC, faculty and industry guests.",
+ tags:["Thermodynamics","Equipment sizing","Process control"],
+ imgs:[["fortis-compressor.png","Recommended compressor and specifications"],["fortis-showcase.jpg","Final showcase presentation"]]},
 
-        <footer>
-            <p>&copy; 2026 Navya Gadhiraju. Built with pure code & hosted for $0 on GitHub Pages.</p>
-        </footer>
-    </div>
+{id:"meda", c:"dev elec", logo:"logo-uvic.png", t:"MedaSort: Smart Medication Cabinet Monitor", meta:"UVic Design &amp; Communication II Lab · Jan – Apr 2025",
+ problem:"Misplaced vials, unauthorized access and temperature excursions put patients at risk in healthcare facilities.",
+ did:["Programmed a Raspberry Pi Pico in Python to read a thermistor (temperature) and a phototransistor (cabinet opened) in real time.","Set up alerts: a red LED when temperature leaves the safe range and a green LED when medication is removed.","Helped assemble and test the circuit, including transistors and current-limiting resistors.","Helped build the web dashboard showing room, patient, temperature, medication and cabinet status."],
+ result:"A two-layer fail-safe: local alarms keep working if the network drops, and the network log catches a bypassed cabinet.",
+ tags:["Python","Raspberry Pi Pico","Circuit analysis","Sensor integration"],
+ imgs:[["medasort-schematic.png","Circuit schematic"],["medasort-sketch.png","Cabinet layout: sensors, LEDs, Pico"],["medasort-dashboard.png","Web dashboard"]]},
 
+{id:"introba", c:"sus mech", logo:"logo-introba-west.png", t:"Passive Building Prototype", meta:"UVic WEST × Introba Canada · Sept – Dec 2024",
+ problem:"Hold about 20 °C with no electrical heating, inside exactly 0.22 m³, under 30 in wide, on a $250 budget, using a donated triple-pane window (U = 0.14, SHGC = 0.20).",
+ did:["Sized the geometry by hand: 30° roof slope, 0.846 m front height, interior length solved from the volume equation.","Built a south-facing window wall for solar gain, insulated walls, a moisture-barrier roof, backer rods at joints and a precast paver as thermal mass.","Used screws and staples only (Cradle-to-Cradle) so the prototype can be taken apart and reused."],
+ result:"Finished at $179.97 against the $250 cap. Tested for a week on Introba's downtown Victoria rooftop through a heavy November storm, logging 1.9 °C to 28.4 °C.",
+ tags:["Passive solar design","Thermal mass","Sizing calculations","Data logging"],
+ imgs:[["introba-design.png","Design: slanted roof, south window, thermal mass"],["introba-prototype.jpg","CAD vs. built prototype"],["introba-temp-data.png","One week of temperature data"],["introba-team.jpg","Build sessions with the team"]]}
+];
+
+/* Skills: [name, detail, [[link label, id of the item that proves it], ...]] */
+const SKILLS = [
+["Design &amp; Engineering",[
+ ["CAD: Fusion 360, SolidWorks","3D modelling, sketch management",[["MRI Simulator","mri"],["Mouse-Clicker","clicker"],["Manual &amp; tolerances","vhp-manual"]]],
+ ["Mechanism design","sliding beds, folding brackets, snap-fits",[["MRI Simulator","mri"],["Mouse-Clicker","clicker"]]],
+ ["3D printing, scanning &amp; DFM","design for print and assembly",[["Mouse-Clicker","clicker"],["Victoria Hand Project","vhp"]]],
+ ["Materials &amp; tensile testing","test design, data collection",[["TPU testing","vhp-tensile"],["Mold materials","vhp-molds"]]],
+ ["Thermodynamics &amp; equipment sizing","power, flow, compression",[["Biogas Compressor","fortis"]]],
+ ["Passive &amp; thermal design","geometry, insulation, thermal mass",[["Passive Building","introba"]]],
+ ["Circuit analysis &amp; embedded Python","Raspberry Pi Pico, sensors",[["MedaSort","meda"]]]]],
+["Data, Lab &amp; Communication",[
+ ["Bioinformatics in R","data cleaning, regex, statistical plots",[["cfDNA analysis","bcc-cfdna"],["Turnaround analysis","bcc-turnaround"]]],
+ ["Microsoft Excel","date calculations, medians, charts",[["Turnaround analysis","bcc-turnaround"]]],
+ ["Clinical wet-lab technique","biosafety cabinet, centrifugation, pipetting",[["Blood processing","bcc-blood"]]],
+ ["Tissue engineering documentation","hiPSC culture, bioink, bioprinting",[["Willerth Lab","willerth"]]],
+ ["Technical writing &amp; SOPs","protocols, manuals, guides",[["RNeasy protocol","bcc-rneasy"],["Willerth protocol","willerth"],["Manual fixes","vhp-manual"]]],
+ ["Presenting to industry &amp; clients","showcases, cross-disciplinary teamwork",[["FortisBC","fortis"],["MRI Simulator","mri"],["Passive Building","introba"]]],
+ ["C, C++, MATLAB","UVic coursework",[]]]]
+];
+
+const BEYOND = [
+["Communities","<ul><li><b>UVic Biomedical Engineering Design Club</b></li><li><b>Formula One Racing Club</b></li><li><b>UVic WEST &amp; WECS</b>: Women in Engineering, Science and Technology; design projects with FortisBC, Introba and Fraser Health</li></ul>"],
+["Outside class","<ul><li>Formula One</li><li>Design projects and woodworking</li><li>Card making</li><li>Teaching skiing (CSIA Level 1)</li></ul><p style='margin-top:10px;color:#9aa9bf;font-size:.85rem'>Cora Arenas and Carol Artemiw Women in Engineering and CSC Award ($10,000) · Women in Engineering and Computer Science Entrance Scholarship</p>"]
+];
+/* Certifications: [name, detail] */
+const CERTS = [["Biosafety Training","BC Cancer Research Centre · 2026"],["Hazardous Drugs Safety","Provincial Health Services Authority · 2026"],["Chemical Safety Training","PHSA · BC Cancer · 2026"],["TCPS 2: CORE 2022","Research ethics · Government of Canada · 2026"],["WHMIS","incl. laboratory labels · PHSA · 2026"],["Blood-borne Pathogens","OHSES · 2025"],["Radiation, X-ray &amp; Laser Safety","OHSES · 2025"],["Biosafety Awareness","University of Victoria · 2025"]];
+/* ================== END OF EDITABLE CONTENT ================== */
+
+const G=(imgs)=>imgs&&imgs.length?`<div class="gallery">${imgs.map(([f,c])=>`<figure><img src="images/${f}" alt="${c}" loading="lazy" onerror="gx(this)"><figcaption>${c}</figcaption></figure>`).join('')}</div>`:'';
+function gx(i){const f=i.closest('figure'),g=f.parentElement;f.remove();if(!g.querySelector('figure'))g.remove()}
+const L=(l)=>l?`<img class="logo" src="images/${l}" alt="" onerror="this.remove()">`:'';
+const DL=(o)=>`<dl><dt>Problem</dt><dd>${o.problem}</dd>${o.cons?`<dt>Constraints</dt><dd>${o.cons}</dd>`:''}<dt>What I did</dt><dd><ul>${o.did.map(x=>`<li>${x}</li>`).join('')}</ul></dd><dt>Result</dt><dd>${o.result}</dd></dl>`;
+document.getElementById('work').innerHTML=WORK.map(w=>`<article class="card" id="${w.id}"><div class="hd">${L(w.logo)}<div><h3>${w.role}</h3><div class="meta">${w.org} · ${w.dates}</div></div></div><p class="sum">${w.sum}</p><ul>${w.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>${w.subs?`<h4>Project highlights (click to open)</h4>`+w.subs.map(s=>`<details class="sub" id="${s.id}"><summary><b>${s.t}</b><span>${s.h}</span></summary>${DL(s)}${G(s.imgs)}</details>`).join(''):''}${G(w.imgs)}</article>`).join('');
+document.getElementById('proj').innerHTML=PROJ.map(p=>`<article class="card" id="${p.id}" data-c="${p.c}"><div class="hd">${L(p.logo)}<div><h3>${p.t}</h3><div class="meta">${p.meta}</div></div></div>${DL(p)}<div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>${G(p.imgs)}</article>`).join('');
+document.getElementById('skills').innerHTML=SKILLS.map(([g,rows])=>`<h4>${g}</h4>`+rows.map(([n,d,ev])=>`<div class="sk"><div><b>${n}</b><span>${d}</span></div><div class="ev">${ev.map(([l,id])=>`<a class="chip" href="#${id}">${l}</a>`).join('')}</div></div>`).join('')).join('');
+document.getElementById('beyond').innerHTML=BEYOND.map(([t,h])=>`<div class="card"><h3 style="margin-bottom:10px">${t}</h3>${h}</div>`).join('');
+
+document.getElementById('certs').innerHTML=CERTS.map(([n,d])=>`<div class="cert"><b>${n}</b><span>${d}</span></div>`).join('');
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;document.querySelectorAll('#proj .card').forEach(c=>c.style.display=(f==='all'||c.dataset.c.split(' ').includes(f))?'':'none')});
+// Skill/proof links open the collapsed section they point to
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const t=document.getElementById(a.getAttribute('href').slice(1));if(!t)return;e.preventDefault();let d=t.tagName==='DETAILS'?t:t.closest('details');while(d){d.open=true;d=d.parentElement.closest('details')}setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),60)});
+
+// Lightbox
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');let set=[],idx=0;
+function show(){const f=set[idx];lbi.src=f.querySelector('img').src;lbi.alt=f.querySelector('img').alt;lbc.textContent=f.querySelector('figcaption').textContent}
+document.addEventListener('click',e=>{const f=e.target.closest('.gallery figure');if(f){set=[...f.parentElement.querySelectorAll('figure')];idx=set.indexOf(f);show();lb.classList.add('open')}});
+const close=()=>lb.classList.remove('open'),step=d=>{idx=(idx+d+set.length)%set.length;show()};
+lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=e=>{e.stopPropagation();step(-1)};lb.querySelector('.nx').onclick=e=>{e.stopPropagation();step(1)};
+lb.onclick=e=>{if(e.target===lb)close()};
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+</script>
 </body>
 </html>
