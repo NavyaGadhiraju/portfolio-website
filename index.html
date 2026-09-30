@@ -3,85 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navya Gadhiraju | Portfolio & CV</title>
+    <title>Navya Gadhiraju | Biomedical Engineering Portfolio & CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131c2e;
+            --card-border: #1e293b;
+            --accent-cyan: #06b6d4;
+            --accent-blue: #3b82f6;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            font-family: 'Plus Jakarta Sans', sans-serif.serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
-            background-color: #fdfdfd;
         }
+
         header {
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.05));
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
         }
-        h1 { margin: 0 0 10px 0; font-size: 2.5rem; color: #111; }
-        .tagline { color: #666; font-size: 1.2rem; margin-bottom: 15px; }
-        nav a { margin-right: 20px; color: #0366d6; text-decoration: none; font-weight: 500; }
-        nav a:hover { text-decoration: underline; }
-        section { margin-bottom: 40px; }
-        h2 { border-bottom: 1px solid #eaeaea; padding-bottom: 8px; color: #222; }
-        .project, .job { margin-bottom: 25px; }
-        .project h3, .job h3 { margin: 0 0 5px 0; color: #0366d6; }
-        .date { font-size: 0.9rem; color: #666; margin-bottom: 8px; font-style: italic; }
-        footer { text-align: center; margin-top: 50px; font-size: 0.85rem; color: #888; border-top: 1px solid #eaeaea; padding-top: 20px; }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-blue));
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-cyan);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-cyan);
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background: var(--accent-cyan);
+            color: #0b0f19;
+            border-color: var(--accent-cyan);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 12px;
+        }
+
+        h2 span {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 25px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .card .meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .skills-tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .about-text {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            header { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Navya Gadhiraju</h1>
-        <div class="tagline">Biomedical Engineering Undergraduate | Mechanical Design & Systems</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="mailto:your-email@example.com">Contact</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Navya Gadhiraju</h1>
+            <div class="tagline">&gt; Biomedical Engineering Undergraduate | Mechanical Design & Clinical Systems</div>
+            <p>University of Victoria (BEng, 2024–2029) | Specializing in mechanical engineering, precision oncology workflows, medical prototyping, and sustainable design systems.</p>
+            
+            <div class="contact-info">
+                <span>📍 Vancouver, BC / Victoria, BC</span>
+                <span>📞 604-789-1216</span>
+                <a href="mailto:navya.gadhiraju@outlook.com">✉️ navya.gadhiraju@outlook.com</a>
+                <a href="https://www.linkedin.com/in/navya-gadhiraju" target="_blank">🔗 LinkedIn Profile</a>
+            </div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Undergraduate Biomedical Engineering student specializing in mechanical engineering at the University of Victoria. Experienced in mechanical component design, 3D prototyping, biobank data analysis, and medical device testing.</p>
-    </section>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Engineering Projects</a>
+                <a href="#skills">Technical Skills</a>
+            </nav>
+        </header>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        
-        <div class="project">
-            <h3>Pediatric MRI Simulator & Biogas Compressor</h3>
-            <p>Collaborated on multi-disciplinary engineering design initiatives spanning healthcare technology and sustainable energy systems, focusing on iterative prototyping and mechanical optimization.</p>
-        </div>
+        <section id="about">
+            <h2><span>01.</span> About Me</h2>
+            <div class="about-text">
+                <p>Hello! I am a third-year Biomedical Engineering student at the University of Victoria specializing in mechanical engineering. Driven by a passion for healthcare innovation and sustainable design, I bridge high-dimensional bioinformatics, hands-on medical hardware prototyping, and clinical sample processing.</p>
+                <p style="margin-top: 15px;">Whether analyzing provincial biobank metadata in R at BC Cancer, assembling 3D-printed prosthetics for international deployment at the Victoria Hand Project, or engineering clinical prototypes like the pediatric MRI simulator, I thrive at the intersection of mechanical design and life-saving medical technology.</p>
+            </div>
+        </section>
 
-        <div class="project">
-            <h3>Prosthetic Component Iteration</h3>
-            <p>Applied Autodesk Fusion 360, 3D printing, and mechanical stress testing (tensile testing on TPU specimens) to evaluate yield strength and refine structural designs.</p>
-        </div>
-    </section>
+        <section id="experience">
+            <h2><span>02.</span> Professional Experience</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <h3>Research Experience Intern</h3>
+                        <div class="meta">BC Cancer (Deeley Research Centre - Fonseca Lab) | May 2026 - Aug 2026</div>
+                        <p>Analyzed provincial metadata across ~9,000 biobanked samples in R, identifying a 3-day median processing gap that initiated blood tube stability trials. Processed clinical blood samples for the VHL Biobank in a biosafety cabinet via two-stage centrifugation to separate cfDNA plasma and buffy coat fractions. Developed a visual bench protocol for QIAGEN RNeasy FFPE total RNA extraction.</p>
+                    </div>
+                    <div class="skills-tag-group">
+                        <span class="tag">R Studio</span>
+                        <span class="tag">Bioinformatics</span>
+                        <span class="tag">Clinical Biosafety</span>
+                        <span class="tag">Liquid Biopsy</span>
+                    </div>
+                </div>
 
-    <section id="experience">
-        <h2>Experience</h2>
+                <div class="card">
+                    <div>
+                        <h3>Biomedical Systems Engineering Intern</h3>
+                        <div class="meta">Victoria Hand Project | Jan 2026 - Apr 2026</div>
+                        <p>Assembled, cabled, and quality-tested 40+ 3D-printed prosthetic hands (VC300, VO300, VS300) for global clinic deployment. Led and trained 50+ volunteers, conducted tensile testing on TPU print orientations, and updated CAD models in Autodesk Fusion 360.</p>
+                    </div>
+                    <div class="skills-tag-group">
+                        <span class="tag">Autodesk Fusion 360</span>
+                        <span class="tag">3D Printing</span>
+                        <span class="tag">Tensile Testing</span>
+                        <span class="tag">Prosthetics</span>
+                    </div>
+                </div>
 
-        <div class="job">
-            <h3>Research Experience Student — BC Cancer (Deeley Research Centre)</h3>
-            <div class="date">Summer 2026</div>
-            <p>Performed biobank metadata analysis using R for the BC Genitourinary Cancer Biobank and managed clinical sample processing for the von Hippel Lindau Biobank.</p>
-        </div>
+                <div class="card">
+                    <div>
+                        <h3>Research Assistant</h3>
+                        <div class="meta">Willerth Lab (UVic) | Jan 2026 - Apr 2026</div>
+                        <p>Co-authored a standardized laboratory protocol for 3D bioprinted neural tissue models for Parkinson's disease, documenting patient-derived hiPSC culture, bioink formulation, and Aspect Biosystems RX1 bioprinting procedures for peer-reviewed publication.</p>
+                    </div>
+                    <div class="skills-tag-group">
+                        <span class="tag">Tissue Engineering</span>
+                        <span class="tag">hiPSC Culture</span>
+                        <span class="tag">3D Bioprinting</span>
+                        <span class="tag">SOP Authoring</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="job">
-            <h3>Biomedical Systems Co-op — Victoria Hand Project</h3>
-            <div class="date">2026</div>
-            <p>Supported 3D-printed prosthetic device assembly, managed volunteer training protocols, and ran structural quality testing.</p>
-        </div>
-    </section>
+        <section id="projects">
+            <h2><span>03.</span> Featured Engineering Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Pediatric MRI Simulator ("Discovery Dome")</h3>
+                    <div class="meta">WEST x Fraser Health / Surrey Memorial Hospital | Sept 2025 – Spring 2026</div>
+                    <p>Co-developed a child-friendly structural MRI simulator to familiarize pediatric patients with scan environments and reduce clinical sedation rates. Designed compact vertical-fold GRP composite domes, rolling V-slot extrusion bed tracks, and sanitation-compliant medical vinyl padding within strict 200 lb weight capacities.</p>
+                    <div class="skills-tag-group">
+                        <span class="tag">CAD Design</span>
+                        <span class="tag">Composite Materials</span>
+                        <span class="tag">Healthcare Ergonomics</span>
+                    </div>
+                </div>
 
-    <footer>
-        <p>&copy; 2026 Navya Gadhiraju. Built with code, hosted for free.</p>
-    </footer>
+                <div class="card">
+                    <h3>FortisBC Biogas Plant Upgrade</h3>
+                    <div class="meta">WEST x FortisBC | Jan 2025 – Apr 2025</div>
+                    <p>Conducted thermodynamic mass flow, power, and single-stage heat calculations to address capacity expansion from 500 to 800 scmh at the Kelowna Biogas Plant. Recommended the Atlas Copco GG Variable Speed Drive Compressor with anti-surge loops and SmartLink monitoring.</p>
+                    <div class="skills-tag-group">
+                        <span class="tag">Industrial Thermodynamics</span>
+                        <span class="tag">Process Systems Sizing</span>
+                        <span class="tag">VSD Compressors</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>MedaSort Smart Medication System</h3>
+                    <div class="meta">UVic Design & Communications Lab | Jan 2025 – Apr 2025</div>
+                    <p>Designed and soldered a low-cost hardware-software tracking device using a Raspberry Pi Pico and Python. Integrated analog thermistors and phototransistors with local LED fail-safe loops and a real-time web dashboard to monitor cabinet access and temperature excursions.</p>
+                    <div class="skills-tag-group">
+                        <span class="tag">Raspberry Pi Pico</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Circuit Analysis</span>
+                        <span class="tag">Web Dashboard</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Introba Passive Building Prototype</h3>
+                    <div class="meta">WEST x Introba Canada | Sept 2024 – Dec 2024</div>
+                    <p>Designed and built a climate-responsive passive building prototype meeting strict 0.22 m³ volume constraints and a $250 budget. Utilized Cradle-to-Cradle mechanical fastening, precast concrete thermal mass, and triple-pane glazing, successfully maintaining thermal retention on a Victoria rooftop during torrential November downpours.</p>
+                    <div class="skills-tag-group">
+                        <span class="tag">Passive Architecture</span>
+                        <span class="tag">Cradle-to-Cradle Design</span>
+                        <span class="tag">Thermal Modeling</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2><span>04.</span> Technical Competencies</h2>
+            <div class="card">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div>
+                        <strong style="color: var(--accent-cyan); display: block; margin-bottom: 8px;">CAD & Design:</strong>
+                        <div class="skills-tag-group">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Autodesk Fusion 360</span>
+                            <span class="tag">Rapid Prototyping</span>
+                            <span class="tag">Mechanical Systems</span>
+                        </div>
+                    </div>
+                    <div>
+                        <strong style="color: var(--accent-cyan); display: block; margin-bottom: 8px;">Programming & Bioinformatics:</strong>
+                        <div class="skills-tag-group">
+                            <span class="tag">R Studio</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">C</span>
+                            <span class="tag">Data Cleaning & Regex</span>
+                        </div>
+                    </div>
+                    <div>
+                        <strong style="color: var(--accent-cyan); display: block; margin-bottom: 8px;">Wet Lab & Clinical Techniques:</strong>
+                        <div class="skills-tag-group">
+                            <span class="tag">Biosafety Cabinet Operations</span>
+                            <span class="tag">Blood Fractionation & Centrifugation</span>
+                            <span class="tag">RNA Extraction (QIAGEN RNeasy)</span>
+                            <span class="tag">Pipetting Validation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Navya Gadhiraju. Built with pure code & hosted for $0 on GitHub Pages.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
