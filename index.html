@@ -78,29 +78,7 @@ footer{margin-top:60px;padding-top:26px;border-top:1px solid var(--line);color:v
 <header>
   <h1>Navya Gadhiraju</h1>
   <div class="tag1">Biomedical Engineering, Mechanical Stream · University of Victoria · Victoria &amp; Vancouver, BC</div>
-  <p class="lead">Here are a few stronger, more polished replacements for that final sentence, depending on the exact tone you want to set:
-
-### Option 1: Forward-Looking & Professional *(Strongly Recommended)*
-
-> "I want to design thoughtful, reliable medical devices that make a tangible difference in patients' lives."
-
-### Option 2: Grounded & Mechanical Focus
-
-> "I want to bridge the gap between complex mechanical innovation and real-world clinical care."
-
-### Option 3: Impact-Driven & Action-Oriented
-
-> "I want to build meaningful medical technology where precision engineering meets genuine human impact."
-
-### Option 4: Concise & Inspiring
-
-> "I’m passionate about creating solutions that empower clinicians and improve care for every patient."
-
----
-
-### How Option 1 looks altogether:
-
-> "Engineering is at its best when it starts with empathy.** I’m a biomedical engineering student at UVic who loves translating clinical friction into practical, human-centered design. Whether that's helping scale 3D-printed prosthetic hands to clinics across 11 countries, building a pediatric MRI simulator to help kids get through scans without the fear of sedation, or streamlining biobank data to help cancer researchers keep pace, my goal is the same: **I want to design thoughtful, reliable medical devices that make a tangible difference in patients' lives!"</p>
+  <p class="lead"><b>Engineering is at its best when it starts with empathy.</b> I’m a biomedical engineering student at UVic who loves translating clinical friction into practical, human-centered design. Whether that's helping scale 3D-printed prosthetic hands to clinics across 11 countries, building a pediatric MRI simulator to help kids get through scans without the fear of sedation, or streamlining biobank data to help cancer researchers keep pace, my goal is the same: <b>I want to design thoughtful, reliable medical devices that make a tangible difference in patients' lives.</b></p>
   <div class="links">
     <a class="btn p" href="Navya_Gadhiraju_Resume.pdf" download>Download Resume</a>
     <a class="btn p" href="Navya_Gadhiraju_Project_Portfolio.pdf" download>Download Project Portfolio</a>
@@ -134,12 +112,6 @@ footer{margin-top:60px;padding-top:26px;border-top:1px solid var(--line);color:v
 </div>
 
 <script>
-/* =====================================================================
-   EDIT YOUR CONTENT HERE. Everything on the page comes from this block.
-   Pictures: put the file in the images/ folder, then add a line like
-   ["my-photo.jpg", "Caption shown under the picture"] to that item's imgs list.
-   Missing images are hidden automatically.
-   ===================================================================== */
 const WORK = [
 {id:"bcc", logo:"logo-bccancer.png", role:"Research Experience Intern", org:"BC Cancer · Deeley Research Centre (Fonseca Lab)", dates:"May – Aug 2026",
  sum:"Precision oncology research that combined biobank data analysis with hands-on clinical blood processing.",
@@ -240,7 +212,6 @@ const PROJ = [
  imgs:[["introba-design.png","Design: slanted roof, south window, thermal mass"],["introba-prototype.jpg","CAD vs. built prototype"],["introba-temp-data.png","One week of temperature data"],["introba-team.jpg","Build sessions with the team"]]}
 ];
 
-/* Skills: [name, detail, [[link label, id of the item that proves it], ...]] */
 const SKILLS = [
 ["Design &amp; Engineering",[
  ["CAD: Fusion 360, SolidWorks","3D modelling, sketch management",[["MRI Simulator","mri"],["Mouse-Clicker","clicker"],["Manual &amp; tolerances","vhp-manual"]]],
@@ -262,11 +233,10 @@ const SKILLS = [
 
 const BEYOND = [
 ["Communities","<ul><li><b>UVic Biomedical Engineering Design Club</b></li><li><b>Formula One Racing Club</b></li><li><b>UVic WEST &amp; WECS</b>: Women in Engineering, Science and Technology; design projects with FortisBC, Introba and Fraser Health</li></ul>"],
-["Outside class","<ul><li>Formula One</li><li>Design projects and woodworking</li><li>Card making</li><li>Teaching skiing (CSIA Level 1)</li></ul><p style='margin-top:10px;color:#9aa9bf;font-size:.85rem'>Cora Arenas and Carol Artemiw Women in Engineering and CSC Award ($10,000) · Women in Engineering and Computer Science Entrance Scholarship</p>"]
+["Outside class","<ul><li>Design projects and woodworking</li><li>Card making</li><li>Teaching skiing (CSIA Level 1)</li></ul><p style='margin-top:10px;color:#9aa9bf;font-size:.85rem'>Cora Arenas and Carol Artemiw Women in Engineering and CSC Award ($10,000) · Women in Engineering and Computer Science Entrance Scholarship</p>"]
 ];
-/* Certifications: [name, detail] */
+
 const CERTS = [["Biosafety Training","BC Cancer Research Centre · 2026"],["Hazardous Drugs Safety","Provincial Health Services Authority · 2026"],["Chemical Safety Training","PHSA · BC Cancer · 2026"],["TCPS 2: CORE 2022","Research ethics · Government of Canada · 2026"],["WHMIS","incl. laboratory labels · PHSA · 2026"],["Blood-borne Pathogens","OHSES · 2025"],["Radiation, X-ray &amp; Laser Safety","OHSES · 2025"],["Biosafety Awareness","University of Victoria · 2025"]];
-/* ================== END OF EDITABLE CONTENT ================== */
 
 const G=(imgs)=>imgs&&imgs.length?`<div class="gallery">${imgs.map(([f,c])=>`<figure><img src="images/${f}" alt="${c}" loading="lazy" onerror="gx(this)"><figcaption>${c}</figcaption></figure>`).join('')}</div>`:'';
 function gx(i){const f=i.closest('figure'),g=f.parentElement;f.remove();if(!g.querySelector('figure'))g.remove()}
@@ -276,13 +246,11 @@ document.getElementById('work').innerHTML=WORK.map(w=>`<article class="card" id=
 document.getElementById('proj').innerHTML=PROJ.map(p=>`<article class="card" id="${p.id}" data-c="${p.c}"><div class="hd">${L(p.logo)}<div><h3>${p.t}</h3><div class="meta">${p.meta}</div></div></div>${DL(p)}<div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>${G(p.imgs)}</article>`).join('');
 document.getElementById('skills').innerHTML=SKILLS.map(([g,rows])=>`<h4>${g}</h4>`+rows.map(([n,d,ev])=>`<div class="sk"><div><b>${n}</b><span>${d}</span></div><div class="ev">${ev.map(([l,id])=>`<a class="chip" href="#${id}">${l}</a>`).join('')}</div></div>`).join('')).join('');
 document.getElementById('beyond').innerHTML=BEYOND.map(([t,h])=>`<div class="card"><h3 style="margin-bottom:10px">${t}</h3>${h}</div>`).join('');
-
 document.getElementById('certs').innerHTML=CERTS.map(([n,d])=>`<div class="cert"><b>${n}</b><span>${d}</span></div>`).join('');
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;document.querySelectorAll('#proj .card').forEach(c=>c.style.display=(f==='all'||c.dataset.c.split(' ').includes(f))?'':'none')});
-// Skill/proof links open the collapsed section they point to
+
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const t=document.getElementById(a.getAttribute('href').slice(1));if(!t)return;e.preventDefault();let d=t.tagName==='DETAILS'?t:t.closest('details');while(d){d.open=true;d=d.parentElement.closest('details')}setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),60)});
 
-// Lightbox
 const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');let set=[],idx=0;
 function show(){const f=set[idx];lbi.src=f.querySelector('img').src;lbi.alt=f.querySelector('img').alt;lbc.textContent=f.querySelector('figcaption').textContent}
 document.addEventListener('click',e=>{const f=e.target.closest('.gallery figure');if(f){set=[...f.parentElement.querySelectorAll('figure')];idx=set.indexOf(f);show();lb.classList.add('open')}});
